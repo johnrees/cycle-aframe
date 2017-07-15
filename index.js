@@ -4,7 +4,7 @@ import {h, makeDOMDriver} from '@cycle/dom';
 require('aframe');
 
 function main(sources) {
-  let vdom$ = xs.periodic(16).startWith(0).map(i =>
+  let vdom$ = xs.periodic(16).startWith(0).endWhen(xs.periodic(3000).take(1)).map(i =>
     h('a-scene', [
       h('a-sphere', {
         attrs: {

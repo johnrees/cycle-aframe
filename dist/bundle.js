@@ -2952,7 +2952,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 __webpack_require__(103);
 
 function main(sources) {
-  var vdom$ = _xstream2.default.periodic(16).startWith(0).map(function (i) {
+  var vdom$ = _xstream2.default.periodic(16).startWith(0).endWhen(_xstream2.default.periodic(3000).take(1)).map(function (i) {
     return (0, _dom.h)('a-scene', [(0, _dom.h)('a-sphere', {
       attrs: {
         position: '0 ' + i / 100 + ' -4',
